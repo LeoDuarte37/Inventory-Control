@@ -46,8 +46,8 @@ CREATE TABLE enterprise (
 #
 CREATE TABLE person (
 	id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    first_name VARCHAR(255) NOT NULL,
-    last_name VARCHAR(255) NOT NULL,
+    first_name VARCHAR(60) NOT NULL,
+    last_name VARCHAR(60) NOT NULL,
     enterprise_id BIGINT NOT NULL,
     FOREIGN KEY(enterprise_id) REFERENCES enterprise(id) ON DELETE CASCADE
 );
@@ -58,8 +58,8 @@ CREATE TABLE person (
 #
 CREATE TABLE login (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(100) NOT NULL,
-    keypass VARCHAR(250) NOT NULL,
+    username VARCHAR(60) NOT NULL,
+    keypass VARCHAR(60) NOT NULL,
     login_role ENUM('ADMIN', 'STOCKIST', 'SELLER') NOT NULL,
     login_status ENUM('ACTIVE', 'INACTIVE', 'BLOCKED') NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
